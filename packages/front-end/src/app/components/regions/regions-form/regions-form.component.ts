@@ -116,7 +116,7 @@ export class RegionsFormComponent implements OnInit {
     }
 
     private setData(id: string): void {
-        // if we have id then we edit
+        // if we dont have id we are in create
         if (!id) {
             return;
         }

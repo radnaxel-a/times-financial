@@ -28,19 +28,12 @@ export abstract class Controller implements IController {
                     (e: any) => e.region_id !== record.region_id
                 );
 
-                console.log(record);
-
-                console.log(data);
-
                 data.push(record);
-
-                console.log(data);
 
                 break;
             case Method.DELETE:
                 data = data.filter((e: any) => e.region_id !== record.id);
                 break;
-
             default:
                 throw new Error('Action not recognised');
         }
