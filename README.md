@@ -9,7 +9,7 @@ In this repository you will find a sample solution for the take home test. The s
 
 ## How to run
 
-Clone the repo and run the following commands in that order.
+Clone the repo, cd into the repo dir and run the following commands in that order.
 
 - `npm i`
 - `npm run install`
