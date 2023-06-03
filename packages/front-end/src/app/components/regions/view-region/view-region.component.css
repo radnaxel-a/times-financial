@@ -1,0 +1,38 @@
+.wrapper {
+    padding: 50px;
+}
+
+.content {
+    margin: 20px 0;
+    padding: 5px 10px;
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    -moz-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+}
+
+.region {
+    padding: 20px;
+}
+
+.region > div {
+    margin-top: 10px;
+}
+
+ul {
+    padding-left: 25px;
+}
+
+.back-arrow {
+    width: 20px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+
+.active-dot {
+    width: 20px;
+    position: relative;
+    top: 5px;
+}

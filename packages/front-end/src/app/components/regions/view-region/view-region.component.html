@@ -1,0 +1,35 @@
+<div *ngIf="region" class="wrapper">
+    <h2>
+        <img
+            class="back-arrow"
+            src="../../../../assets/images/arrow-left-solid.svg"
+            alt="back-arr"
+            routerLink="/regions"
+        />
+        Times Financial
+    </h2>
+    <div class="region content">
+        <h1>{{ region.name }}</h1>
+        <div>
+            <h3>Countries</h3>
+            <ul *ngFor="let country of region.countries">
+                <li>{{ country }}</li>
+            </ul>
+        </div>
+        <div>
+            Active:
+            <img
+                *ngIf="region.isActive"
+                class="active-dot"
+                src="../../../../assets/images/circle-solid.svg"
+                alt="active"
+            />
+            <img
+                *ngIf="!region.isActive"
+                class="active-dot"
+                src="../../../../assets/images/circle-regular.svg"
+                alt="non-active"
+            />
+        </div>
+    </div>
+</div>

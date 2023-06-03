@@ -1,0 +1,74 @@
+<div class="wrapper">
+    <h1>Times Financial</h1>
+    <h2>
+        <span>Regions</span>
+
+        <div>
+            <input
+                class="search-bar"
+                [formControl]="regionsSearchQuery"
+                type="text"
+                placeholder="Search"
+            />
+            <button class="add-new" routerLink="/regions/create">
+                New Region
+            </button>
+        </div>
+    </h2>
+
+    <div class="table">
+        <div class="table-header">
+            <span class="flex-grow-2">ID</span>
+            <span class="flex-grow-6">Name</span>
+            <span class="flex-grow-7">Active</span>
+            <span class="flex-grow-2 txt-right">Options</span>
+        </div>
+        <div
+            *ngFor="
+                let region of regions$
+                    | async
+                    | filterRegions : (regionsSearchQuery.valueChanges | async);
+                let i = index
+            "
+            class="row"
+        >
+            <span class="flex-grow-2">{{ i + 1 }}</span>
+            <span class="flex-grow-6"
+                ><a routerLink="/regions/details/{{ region.region_id }}">{{
+                    region.name
+                }}</a></span
+            >
+            <span class="flex-grow-7">
+                <img
+                    *ngIf="region.isActive"
+                    src="../../../../assets/images/circle-solid.svg"
+                    alt="active"
+                />
+                <img
+                    *ngIf="!region.isActive"
+                    src="../../../../assets/images/circle-regular.svg"
+                    alt="non-active"
+                />
+            </span>
+            <span class="flex-grow-2">
+                <div class="options">
+                    <span>
+                        <img
+                            (click)="openDropdown(region.region_id)"
+                            src="../../../../assets/images/bars-solid.svg"
+                            alt="opt-menu"
+                        />
+                    </span>
+                    <div
+                        class="dropdown"
+                        #options
+                        data-id="{{ region.region_id }}"
+                    >
+                        <div (click)="onEdit(region.region_id)">Edit</div>
+                        <div (click)="onDelete(region.region_id)">Delete</div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>

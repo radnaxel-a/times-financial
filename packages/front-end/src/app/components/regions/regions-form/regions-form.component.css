@@ -1,0 +1,89 @@
+.wrapper {
+    padding: 50px;
+}
+
+.back-arrow {
+    width: 20px;
+    position: relative;
+    top: 2px;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-list {
+    padding: 5px;
+    position: absolute;
+    z-index: 2;
+    max-height: 200px;
+    overflow-y: auto;
+    min-width: 100px;
+    max-width: max-content;
+    left: 68px;
+    display: none;
+    background-color: whitesmoke;
+    -webkit-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    -moz-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+}
+
+input {
+    margin-left: 20px;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    padding-left: 15px;
+    background-color: whitesmoke;
+    height: 40px;
+}
+
+.content {
+    margin: 20px 0;
+    padding: 10px 30px;
+    background-color: white;
+    border-radius: 15px;
+    -webkit-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    -moz-box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+    box-shadow: 0px 0px 18px 3px rgba(46, 45, 46, 0.24);
+}
+
+.content > div {
+    margin-top: 10px;
+    min-height: 50px;
+}
+
+label {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+li {
+    margin-top: 5px;
+}
+
+.remove {
+    width: 15px;
+    position: relative;
+    top: 4px;
+    left: 8px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    position: relative;
+    top: 12px;
+}
+
+button {
+    padding: 5px 15px;
+    border: 1px solid #80808075;
+    border-radius: 15px;
+    background: green;
+    color: white;
+}

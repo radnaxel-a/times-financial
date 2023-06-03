@@ -1,0 +1,72 @@
+<div class="wrapper">
+    <h2 *ngIf="regionId">
+        <img
+            class="back-arrow"
+            src="../../../../assets/images/arrow-left-solid.svg"
+            alt="back-arr"
+            routerLink="/regions"
+        />
+        Edit Region
+    </h2>
+    <h2 *ngIf="!regionId">
+        <img
+            class="back-arrow"
+            src="../../../../assets/images/arrow-left-solid.svg"
+            alt="back-arr"
+            routerLink="/regions"
+        />
+        Create Region
+    </h2>
+
+    <form [formGroup]="form" class="content">
+        <div>
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" type="text" />
+        </div>
+        <div>
+            <div class="dropdown" *ngIf="countries.length">
+                <label for="countries">Countries</label>
+                <input
+                    [formControl]="countriesSearchQuery"
+                    (focus)="showCountriesDropDown($event)"
+                    (focusout)="hideCountriesDropDown($event)"
+                    id="countries"
+                    type="text"
+                    placeholder="Search for a country"
+                    autocomplete="off"
+                />
+                <div class="dropdown-list">
+                    <div
+                        *ngFor="
+                            let country of countries
+                                | filterCountries
+                                    : (countriesSearchQuery.valueChanges
+                                          | async)
+                        "
+                        (click)="addCountry(country)"
+                    >
+                        {{ country.name }}({{ country.code }})
+                    </div>
+                </div>
+            </div>
+            <ul *ngFor="let country of form.get('countries')!.value">
+                <li>
+                    {{ country }}
+                    <img
+                        src="../../../../assets/images/xmark-solid.svg"
+                        alt="remove"
+                        class="remove"
+                        (click)="removeCountry(country)"
+                    />
+                </li>
+            </ul>
+        </div>
+        <div>
+            <label for="is-active">Active</label>
+            <input id="is-active" type="checkbox" formControlName="isActive" />
+        </div>
+        <div>
+            <button (click)="onSubmit()">Submit</button>
+        </div>
+    </form>
+</div>

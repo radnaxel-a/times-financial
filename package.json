@@ -1,0 +1,17 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"cd packages/front-end && npm run start\" \"cd packages/back-end && npm run start\"",
+    "build": "npx lerna run build",
+    "install": "npx lerna bootstrap",
+    "test": "cd packages/front-end && npm run test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.1.0",
+    "lerna": "^6.6.2"
+  }
+}
