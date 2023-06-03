@@ -9,8 +9,6 @@ In this repository you will find a sample solution for the take home test. The s
 
 ## How to run
 
----
-
 Clone the repo and run the following commands in that order.
 
 - `npm i`
@@ -23,8 +21,6 @@ Clone the repo and run `npm i` in the root dir. Afterwards run `npm run install`
 
 ## Monorepo
 
----
-
 The monorepo is set up with lerna to make running and managing the fe and be more easly.
 
 scripts:
@@ -36,8 +32,6 @@ scripts:
 
 ## Front-end
 
----
-
 The FE is build with Angular and Typescript. You can run it standalone by navigating to the front-end dir and running `npm run start`
 
 ## Back-end
@@ -45,8 +39,6 @@ The FE is build with Angular and Typescript. You can run it standalone by naviga
 The BE is build with Express.js and Typescript. The region data is stored in json files, for the sake of a fully working CRUD solution. You can run it standalone by navigating to the back-end dir and running `npm run start`
 
 ## Unit test
-
----
 
 **Coverage summary**
 
